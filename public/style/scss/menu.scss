@@ -1,0 +1,97 @@
+// Меню
+
+.menu {
+  padding-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 25px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  a {
+    padding-right: 30px;
+    color:  cornflowerblue;
+    @extend %hover;
+  }
+  &__iconAdmin {
+    width: 25px;
+    height: 26px;
+    background: url("/img/icon/settings.svg");
+    background-size: contain;
+  }
+
+  &__Admin {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+.menu__icon {
+  width: 30px;
+}
+
+.menu__basket {
+  display: flex;
+  @extend %hover;
+}
+
+.menu__span {
+  position: absolute;
+  top: -8px;
+  left: 32px;
+  font-size: 17px;
+  border: 1px solid #6495ed;
+  border-radius: 50%;
+  padding: 4px 7px 4px 7px;
+  transition: 0.3s;
+
+  &:hover {
+    .menu__iconCart {
+      background: url("/img/icon/shopping_cart_blue.svg");
+    }
+  }
+}
+
+.basketMenu {
+  position: relative;
+  display: flex;
+  transition: 0.3s;
+  &:hover {
+    .menu__span {
+      border: 1px solid blue;
+    }
+  }
+}
+
+.menu__iconLogin {
+  width: 30px;
+  height: 30px;
+  background: url("/img/icon/login.svg");
+  transition: 0.3s;
+  &:hover {
+    background: url("/img/icon/login_blue.svg");
+  }
+}
+
+.menu__iconCart {
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  background: url("/img/icon/shopping_cart.svg");
+  transition: 0.3s;
+  &:hover {
+    background: url("/img/icon/shopping_cart_blue.svg");
+  }
+}
+.menu__iconLogout {
+  width: 30px;
+  height: 30px;
+  background: url("/img/icon/logout.svg");
+  &:hover {
+    background: url("/img/icon/logout_blue.svg");
+  }
+}
+.menu__logout {
+  display: flex;
+}
