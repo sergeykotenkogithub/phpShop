@@ -3,21 +3,43 @@
 .menu {
   padding-top: 30px;
   margin-bottom: 30px;
-  display: flex;
-  justify-content: space-evenly;
   font-size: 25px;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  a {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+
+  &__name {
     padding-right: 30px;
+  }
+
+  @media (max-width: 601px) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 0;
+    justify-items: center;
+  }
+  
+  @media (max-width: 350px) {
+    font-size: 23px;
+  }
+
+  a {
+    padding-bottom: 15px;
     color:  cornflowerblue;
     @extend %hover;
+
+    @media (max-width: 601px) {
+      padding-bottom: 30px;
+    }
+
   }
   &__iconAdmin {
     width: 25px;
     height: 26px;
     background: url("/img/icon/settings.svg");
     background-size: contain;
+    @media (max-width: 940px) {
+        display: none;
+    }
   }
 
   &__Admin {
@@ -34,6 +56,9 @@
 .menu__basket {
   display: flex;
   @extend %hover;
+  @media (max-width: 601px) {
+    justify-self: end;
+  }
 }
 
 .menu__span {
@@ -57,6 +82,9 @@
   position: relative;
   display: flex;
   transition: 0.3s;
+  @media (max-width: 601px) {
+    justify-self: end;
+  }
   &:hover {
     .menu__span {
       border: 1px solid blue;
@@ -94,4 +122,15 @@
 }
 .menu__logout {
   display: flex;
+  width: 100px;
+  @media (max-width: 601px) {
+    justify-self: end;
+    order: 1;
+    padding-left: 40px;
+  }
 }
+
+.menu__adminName {
+  padding: 0 10px;
+}
+
